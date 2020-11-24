@@ -30,7 +30,7 @@ function Cat(name) {
    
    var animalFeed = this.feed;
     this.feed = function() {
-        console.log(animalFeed());
+        animalFeed();
         console.log('Кот доволен ^_^');
         return this;
     }
