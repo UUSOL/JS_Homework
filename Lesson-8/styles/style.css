@@ -28,7 +28,6 @@ a {
 
 /*header*/
 header {
-	padding: 3px 0 3px 0;
 	background-color: #2d313d;
 }
 
@@ -40,11 +39,11 @@ header {
 .header > img {
 	width:32px;
 	height:20px;
-	padding-left: 5px;
+	padding-left: 10px;
 }
 
 .info {									
-	margin-right: 7px;
+	padding-right: 7px;
 }
 
 .info a, .info i{
@@ -63,7 +62,7 @@ header {
 
 #header-form {
 	display: none;
-	margin: 3px; 
+	margin: 0px 3px 0 5px;  
 }
 
 .header input {
@@ -74,22 +73,18 @@ header {
 /* menu items*/
 .header-nav {
 	background-color: #646d81;
-	padding: 10px 0 10px 0;
-}
-
-.nav {											 
-	align-items: center;
 }
 
 .nav a {									
 	color: white;
-	margin: 0px 15px 5px 2px;
+	padding: 7px 0 14px 0;
+	margin: 0 7px 0 9px;
 	border-top: #646d81 5px solid;
 }
 
 .nav a:hover {
-	border-top: white 4px solid;
-	transition: 0.4s;
+	border-top: white 5px solid;
+	transition: 0.5s;
 }
 
 /*  main */
@@ -97,21 +92,21 @@ main {
 	background-color: white;
 }
 
-.side-nav {									
+.side-nav {
+	padding: 20px 0;								
 	max-width: 170px;
-	padding: 15px;
 	background-color: white;
-	border-right: 1px solid #646d81;
-	border-left: 1px solid #646d81;
+	border-left: 1px solid rgba(100, 109, 129, 0.2);
+	border-right: 1px solid rgba(100, 109, 129, 0.2);
 }
 	
 .side-nav a, .side-nav span{
-	display: inline-block;
-	padding: 5px;
+	display: block;
+	padding: 12px 23px; 
+	border-left: 4px solid white;
 }
 
-.side-nav a {
-	margin: 10px;										
+.side-nav a {							
 	color: grey;
 	font: 14px Arial;
 	white-space: pre;
@@ -119,13 +114,13 @@ main {
 
 .side-nav a:hover {
 	border-left: 4px grey solid;
-	transition: 0.2s;
+	color: black;
+	transition: 0.5s;
 }
 
 .submenu-title {
 	font: 18px Georgia;
-	padding-left: 15px;
-	margin-top: 30px;
+	margin-top: 30px; 
 }
 
 /*content*/
@@ -228,6 +223,10 @@ p {
 	color: black;
 }
 
+.buttons a:hover {
+	background-color: #f2f4f8;
+}
+
 .buttons a>i {
 	margin: 5px;
 }
@@ -240,9 +239,16 @@ p {
 	border-bottom: 2px white solid;
 }
 
-.footer a {									
-	padding: 10px;
+.footer a {	
+	border-top: 2px	solid #f2f4f8;							
+	padding: 10px 5px;
+	margin: 0 5px;
 	color: grey;
+}
+
+.footer a:hover {
+	border-top-color: grey;
+	transition: 0.5s;
 }
 
 .footer span {
@@ -254,8 +260,8 @@ p {
 }
 
 
-@media screen and (max-width: 600px){
-	form + a, .side-nav {
+@media screen and (max-width: 610px){
+	form + a, .header input,  .side-nav {
 		display: none;
 	}
 
@@ -264,6 +270,6 @@ p {
 	}
 
 	.header {
-		margin: 10px;
+		padding: 9px 0 9px 0;
 	}
 }
