@@ -70,7 +70,7 @@ function deepClone(origin, clone = {}) {
  ////////////Task 3 //////////////
 function deepEqual(origin, origin2, bool = true) {
    	if (typeof origin !== typeof origin2) return false;
-   	if (!origin || !origin2 || typeof origin !== 'object') return origin === origin2;
+   	if (!origin || !origin2 || typeof origin !== 'object' || typeof origin !== 'function') return origin === origin2;
 
    	if (Array.isArray(origin)) {
    		if (origin.length !== origin2.length) return false;
