@@ -44,7 +44,8 @@ Cat.prototype.stroke = function() {
 
 
 //////////////// Task 2 /////////////////
-function deepClone(origin, clone = {}) {
+function deepClone(origin) {
+    var clone  = {};
    	if (!origin || typeof origin !== 'object') {
    		return origin;
    	}
@@ -68,18 +69,19 @@ function deepClone(origin, clone = {}) {
 }
 
  ////////////Task 3 //////////////
-function deepEqual(origin, origin2, bool = true) {
-   	if (typeof origin !== typeof origin2) return false;
-   	if (!origin || !origin2 || typeof origin !== 'object' || typeof origin !== 'function') return origin === origin2;
+function deepEqual(origin, origin2) {
+   	var bool = true;
+    if (typeof origin !== typeof origin2) return false;
+   	if (!origin || !origin2 || typeof origin !== 'object' && typeof origin !== 'function') return origin === origin2;
 
    	if (Array.isArray(origin)) {
    		if (origin.length !== origin2.length) return false;
-		for (var i = 0; i < origin.length; i++) {
-			bool = deepEqual(origin[i], origin2[i]);
-			if (!bool) return bool;
-		}
-	} 
-	else if (typeof origin === 'function') {
+	   	for (var i = 0; i < origin.length; i++) {
+		  	bool = deepEqual(origin[i], origin2[i]);
+			  if (!bool) return bool;
+		  }
+	  } 
+	  else if (typeof origin === 'function') {
     		bool = origin.toString() === origin2.toString();
    	}
    	else {
@@ -122,4 +124,4 @@ clonedObj.array.push(2);
 console.log(initialObj);
 console.log(clonedObj);
 
-deepEqual(initialObj, clonedObj)
+deepEqual(initialObj, clonedObj);
