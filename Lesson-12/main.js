@@ -27,13 +27,15 @@ function countVowels(sent) {
    	}
 
    	var vowels = 'aeiou';
+   	var count = 0;
 
-    var result = sent.split('')
-                     .filter(function(el) {
-                        return vowels.includes(el);
-                      });
-    
-    return result.length;
+   	for (var i = 0; i < sent.length; i++) {
+   		if (vowels.indexOf(sent[i]) > -1) {
+   			count++;
+   		}
+   	}
+
+    return count;
 }
 
 ///// Task 4 /////
