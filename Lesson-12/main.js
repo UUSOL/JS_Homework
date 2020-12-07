@@ -22,11 +22,18 @@ function convertTime(arr) {
 
 ///// Task 3 /////
 function countVowels(sent) {
-	if (!text || typeof text !== 'string') {
+	if (!sent || typeof sent !== 'string') {
    		return 'Sorry. It works only with texts as a string';   	
    	}
-   	
-   	return sent.length - sent.split(/[aeiou]/i).join('').length;
+
+   	var vowels = 'aeiou';
+
+    var result = sent.split('')
+                     .filter(function(el) {
+                        return vowels.includes(el);
+                      });
+    
+    return result.length;
 }
 
 ///// Task 4 /////
