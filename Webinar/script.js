@@ -21,7 +21,7 @@ button.onclick = function() {
 	var links = document.getElementsByClassName('some-class');
 
 	for (var i = 0; i < links.length; i++) {
-		links[i].style.color = 'green';
+		links[i].setAttribute('style', 'color: red;'); 
 	}
 }
 
