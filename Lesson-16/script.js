@@ -27,7 +27,7 @@ function loadUsers(page) {
 			if (statusType === 2) {
 				try {
             	   	var data = JSON.parse(this.response).data;
-               		localStorage.setItem("users_page_" + page, JSON.stringify(data));
+               		localStorage.setItem('users_page_' + page, JSON.stringify(data));
                		genBlog(data, data.length, page);
         		} catch(e) { 
         			genError();
@@ -42,7 +42,7 @@ function loadUsers(page) {
 function genBlog(data, len, page) {
 		//hidden error message
 		var h1 = document.getElementsByTagName('h1')[0]
-		if (h1) h1.innerHTML = "";
+		if (h1) h1.innerHTML = '';
 		
 		//generate new main tag with content
 		var main = document.createElement('main');
@@ -92,7 +92,7 @@ function genBlog(data, len, page) {
         	document.body.replaceChild(main, oldMain);
         } else {
             document.body.appendChild(main);
-            document.getElementById('init').style = 'display:none';
+            document.getElementById('init').classList.add('hide');
         }
 
     main.onclick = function() {
@@ -128,9 +128,9 @@ function genError() {
 	localStorage.clear();
 	
 	var h1 = document.createElement('h1');
-		h1.innerHTML = "Sorry something gone wrong. Please try again";
+		h1.innerHTML = 'Sorry something gone wrong. Please try again';
 	
-	var button = document.getElementById('init').style = "display: inline";
+	var button = document.getElementById('init').classList.add('hide');
 	
 	var main = document.getElementsByTagName('main')[0];
 	if (main) main.remove();
